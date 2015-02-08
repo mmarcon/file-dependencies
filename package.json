@@ -1,0 +1,20 @@
+{
+  "name": "file-dependencies",
+  "version": "1.0.0",
+  "description": "Allows to specify fileDependencies in package.json to fetch local and remote files",
+  "main": "fetch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "package.json",
+    "dependencies"
+  ],
+  "author": "Massimiliano Marcon <me@marcon.me> (http://marcon.me)",
+  "license": "MIT",
+  "dependencies": {
+    "q": "^1.1.2",
+    "request": "^2.53.0"
+  }
+}
