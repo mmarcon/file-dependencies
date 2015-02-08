@@ -2,7 +2,7 @@
   "name": "file-dependencies",
   "version": "1.0.0",
   "description": "Allows to specify fileDependencies in package.json to fetch local and remote files",
-  "main": "fetch.js",
+  "main": "file-dependencies.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
   "dependencies": {
     "q": "^1.1.2",
     "request": "^2.53.0"
+  },
+  "scripts": {
+    "postinstall": "file-dependencies.js"
   }
 }

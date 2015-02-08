@@ -1,0 +1,7 @@
+{
+  "name": "file-dependencies-demo",
+  "fileDependencies": {
+    "selenium-server-standalone.jar": "http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.1.jar",
+    "gitignore": "../.gitignore"
+  }
+}
