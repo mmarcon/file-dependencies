@@ -15,6 +15,6 @@
     "request": "^2.53.0"
   },
   "scripts": {
-    "postinstall": "file-dependencies.js"
+    "postinstall": "./file-dependencies.js"
   }
 }
