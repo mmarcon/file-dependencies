@@ -35,3 +35,6 @@ npm-debug.log
 
 #Demo files
 file_dependencies
+
+#Test files
+tests/fixtures/destination

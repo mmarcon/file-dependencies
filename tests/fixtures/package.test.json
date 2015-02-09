@@ -1,0 +1,7 @@
+{
+  "name": "file-dependencies-test",
+  "fileDependencies": {
+    "http.file.txt": "http://some.file.com/http.file.txt",
+    "local.file.txt": "./tests/fixtures/source/local.file.txt"
+  }
+}
