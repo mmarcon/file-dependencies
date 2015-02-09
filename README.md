@@ -23,6 +23,6 @@ If a node projects requires some additional libraries or binaries that do not co
       }
     }
 
-With this `package.json` NPM will fetch the `file-dependencies` module, and then `selenium-server-standalone-2.43.1.jar` will be downloaded from the Selenium website and copied in `node_modules/file_dependencies`.
+With this `package.json` NPM will fetch the `file-dependencies` module, and then `selenium-server-standalone-2.43.1.jar` will be downloaded from the Selenium website and copied in `node_modules/file_dependencies`. The downloaded file will be named `selenium-server-standalone.jar`.
 
 From the application it will be possible to use child process to instantiate the selenium server.
