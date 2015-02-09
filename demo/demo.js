@@ -11,6 +11,6 @@ fetch.prepareDestination(fileDependenciesDestination)
     .then(fetch.readPackageJSON)
     .then(fetch.getFileDependencies)
     .then(fetch.fetchDependencies(fileDependenciesDestination))
-    .done(function(){
+    .finally(function(){
         console.log('done');
     });

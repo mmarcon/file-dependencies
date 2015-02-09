@@ -17,6 +17,14 @@ var rootNodeModulesFolder = __dirname,
     fileDependenciesDestination = path.join(__dirname, 'fixtures', 'destination'),
     rootPackageJson = path.join(rootNodeModulesFolder, 'fixtures', 'package.test.json');
 
+//Ugly Cleanup
+try {
+    fs.unlinkSync(path.join(fileDependenciesDestination, 'http.file.txt'));
+    fs.unlinkSync(path.join(fileDependenciesDestination, 'local.file.txt'));
+    fs.rmdirSync(fileDependenciesDestination);
+}
+catch(e){}
+
 test('prepare destination', function(t){
     t.plan(1);
     fetch.prepareDestination(fileDependenciesDestination)
@@ -63,7 +71,7 @@ test('fetch dependencies (local and remote)', function(t){
         .then(fetch.readPackageJSON)
         .then(fetch.getFileDependencies)
         .then(fetch.fetchDependencies(fileDependenciesDestination))
-        .done(function(){
+        .finally(function(){
             fs.exists(path.join(fileDependenciesDestination, 'http.file.txt'), function(exists){
                 t.true(exists, 'remote file was fetched');
             });
