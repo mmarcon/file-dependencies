@@ -34,5 +34,4 @@ node_modules
 npm-debug.log
 
 #Demo files
-demo/gitignore
-demo/*.jar
+file_dependencies

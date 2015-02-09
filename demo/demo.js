@@ -2,13 +2,15 @@
 var fetch = require('../lib/fetch'),
     path = require('path');
 
-var rootNodeModulesFolder = path.resolve(__dirname);
-var rootPackageJson = path.join(rootNodeModulesFolder, 'package.demo.json');
+var rootNodeModulesFolder = path.resolve(__dirname),
+    fileDependenciesDestination = path.join(__dirname, 'file_dependencies'),
+    rootPackageJson = path.join(rootNodeModulesFolder, 'package.demo.json');
 
-fetch.checkPackageJSON(rootPackageJson)
+fetch.prepareDestination(fileDependenciesDestination)
+    .then(fetch.checkPackageJSON(rootPackageJson))
     .then(fetch.readPackageJSON)
     .then(fetch.getFileDependencies)
-    .then(fetch.fetchDependencies(rootNodeModulesFolder))
+    .then(fetch.fetchDependencies(fileDependenciesDestination))
     .done(function(){
         console.log('done');
     });
