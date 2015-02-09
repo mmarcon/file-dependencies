@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Allows to specify fileDependencies in package.json to fetch local and remote files",
   "main": "file-dependencies.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "npm",
     "package.json",
