@@ -15,6 +15,7 @@
     "request": "^2.53.0"
   },
   "scripts": {
+    "preinstall": "./preinstall.js",
     "postinstall": "./file-dependencies.js",
     "test": "./tests/fetch.test.js"
   },
