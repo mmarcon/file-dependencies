@@ -11,11 +11,11 @@
   "author": "Massimiliano Marcon <me@marcon.me> (http://marcon.me)",
   "license": "MIT",
   "dependencies": {
-    "q": "^1.1.2",
-    "request": "^2.53.0"
+    "q": "1.1.2",
+    "request": "2.53.0"
   },
   "scripts": {
-    "preinstall": "node preinstall.js",
+    "preinstall": "npm install q@1.1.2 request@2.53.0",
     "postinstall": "node file-dependencies.js",
     "test": "./tests/fetch.test.js"
   },
