@@ -1,6 +1,6 @@
 {
   "name": "file-dependencies",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Allows to specify fileDependencies in package.json to fetch local and remote files",
   "main": "file-dependencies.js",
   "keywords": [
