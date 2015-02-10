@@ -79,5 +79,20 @@ test('fetch dependencies (local and remote)', function(t){
                 t.true(exists, 'local file was fetched');
             });
         });
+});
 
+test('parse platform dependency', function(t){
+    t.plan(4);
+    var platformObject = {
+        "darwin": "https://some.deps.com/osx",
+        "linux": {
+            "ia32": "https://some.deps.com/linux_32",
+            "x64": "https://some.deps.com/linux_64"
+        },
+        "win32": "https://some.deps.com/windows.exe"
+    };
+    t.deepEqual(fetch._parsePlatformDependency(platformObject, {platform: 'darwin'}), 'https://some.deps.com/osx', 'darwin dependency found');
+    t.deepEqual(fetch._parsePlatformDependency(platformObject, {platform: 'linux', arch: 'ia32'}), 'https://some.deps.com/linux_32', 'linux 32 dependency found');
+    t.deepEqual(fetch._parsePlatformDependency(platformObject, {platform: 'linux', arch: 'x64'}), 'https://some.deps.com/linux_64', 'linux 64 dependency found');
+    t.deepEqual(fetch._parsePlatformDependency(platformObject, {platform: 'win32', arch: 'x64'}), 'https://some.deps.com/windows.exe', 'windows dependency found');
 });
